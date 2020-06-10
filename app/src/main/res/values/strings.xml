@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MyClouds</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_nuvol_list">NuvolListActivity</string>
+    <string name="title_activity_nuvol_data">NuvolDataActivity</string>
+    <string name="title_activity_dicotomica">DicotomicaActivity</string>
+    <string name="t1">¿Se ven u oyen rayos?</string>
+    <string name="t2">¿Tiene protuberancias individuales o forma de cúpula claramente visibles?</string>
+    <string name="t3">¿Se observa una capa unniforme continua o discontinua, sin rodillos ni elementos distintivos?</string>
+    <string name="t4">¿Hay filamentos o fibras blancas y finas?</string>
+    <string name="t5">¿Son elementos más pequeños que un dedo (brazo estirado)?</string>
+    <string name="t6">¿Son todos los elementos redondos del tamaño de 1 a 3 dedos?</string>
+    <string name="t7">¿Aparece el sol o la luna en forma de halo?</string>
+    <string name="t8">¿Se observa una capa alta en forma de lámina y de color entero grisáceo o azulado y gris oscuro?</string>
+    <string name="t9">¿Hay una capa baja densa y alargada poco definida que puede generar precipitaciones?</string>
+    <string name="t10">¿En el nivel alto de esa nube es nítido el contorno?</string>
+
+</resources>

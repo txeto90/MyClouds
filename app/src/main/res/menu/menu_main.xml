@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myclouds.activity.MainActivity">
+    <item
+        android:id="@+id/inici"
+        android:orderInCategory="100"
+        android:title="Inici"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/guia"
+        android:orderInCategory="100"
+        android:title="Guia"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/identificador"
+        android:orderInCategory="100"
+        android:title="Identificador"
+        app:showAsAction="never" />
+
+</menu>

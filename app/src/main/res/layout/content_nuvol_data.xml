@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-89dp"
+        tools:layout_editor_absoluteY="63dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtNom"
+                android:layout_width="350dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="21dp"
+                android:text="Vulgar name"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgNuvol"
+                android:layout_width="350dp"
+                android:layout_height="277dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="21dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNom" />
+
+            <TextView
+                android:id="@+id/txtDescripcio"
+                android:layout_width="348dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="21dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="Information about togglebutton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPrecipitacion" />
+
+            <TextView
+                android:id="@+id/lblAltitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:text="Altitud:"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtIcono" />
+
+            <TextView
+                android:id="@+id/txtAltitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="TextView"
+                app:layout_constraintStart_toEndOf="@+id/lblPrecipitacion"
+                app:layout_constraintTop_toBottomOf="@+id/txtPrecipitacion" />
+
+            <TextView
+                android:id="@+id/lblPrecipitacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="10dp"
+                android:text="Precipitación:"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblAltitud" />
+
+            <TextView
+                android:id="@+id/txtPrecipitacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="si/no"
+                app:layout_constraintStart_toEndOf="@+id/lblAltitud"
+                app:layout_constraintTop_toBottomOf="@+id/txtIcono" />
+
+            <ImageView
+                android:id="@+id/imgIcono"
+                android:layout_width="38dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@+id/txtIcono"
+                app:layout_constraintTop_toBottomOf="@+id/imgNuvol"
+                app:srcCompat="@drawable/search48dp" />
+
+            <TextView
+                android:id="@+id/txtAbre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Abreviatura:"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imgIcono"
+                app:layout_constraintTop_toBottomOf="@+id/imgNuvol" />
+
+            <TextView
+                android:id="@+id/txtIcono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:text="Símbolo:"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgNuvol" />
+
+            <TextView
+                android:id="@+id/txtAbrev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="TextView"
+                app:layout_constraintStart_toEndOf="@+id/txtAbre"
+                app:layout_constraintTop_toBottomOf="@+id/imgNuvol" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
