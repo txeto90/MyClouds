@@ -17,5 +17,10 @@
         android:orderInCategory="100"
         android:title="Identificador"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/joc"
+        android:orderInCategory="100"
+        android:title="Joc"
+        app:showAsAction="never" />
 
 </menu>

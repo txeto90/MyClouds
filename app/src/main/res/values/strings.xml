@@ -22,5 +22,6 @@
     <string name="t8">¿Se observa una capa alta en forma de lámina y de color entero grisáceo o azulado y gris oscuro?</string>
     <string name="t9">¿Hay una capa baja densa y alargada poco definida que puede generar precipitaciones?</string>
     <string name="t10">¿En el nivel alto de esa nube es nítido el contorno?</string>
+    <string name="title_activity_quiz">QuizActivity</string>
 
 </resources>

@@ -50,6 +50,11 @@ public class MainMenu extends AppCompatActivity {
             startActivity(new Intent(this, DicotomicaActivity.class));
             return true;
         }
+        if (id == R.id.joc) {
+            startActivity(new Intent(this, QuizActivity.class));
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }
