@@ -19,7 +19,7 @@ public class QuizActivity extends MainMenu {
 
     private ArrayList<Pregunta> preguntes;
     RadioButton rd1, rd2, rd3;
-    int lloc;
+    int random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +38,9 @@ public class QuizActivity extends MainMenu {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultat();
+                resultat(preguntes);
             }
         });
-
-
     }
 
     private void plenarArray(){
@@ -59,8 +57,8 @@ public class QuizActivity extends MainMenu {
     }
 
     public void posarPregunta(ArrayList<Pregunta> ps ){
-        lloc = new Random().nextInt(2);
-        int random = new Random().nextInt(ps.size());
+        int lloc = new Random().nextInt(2);
+        random = new Random().nextInt(ps.size());
         int opt1 = new Random().nextInt(ps.size());
         int opt2 = new Random().nextInt(ps.size());
 
@@ -91,34 +89,24 @@ public class QuizActivity extends MainMenu {
         }
     }
 
-    public void resultat(){
+    public void resultat(ArrayList<Pregunta> ps){
         RadioGroup rg = findViewById(R.id.radiogroup);
         if(rg.getCheckedRadioButtonId() == -1){
             Toast.makeText(getApplicationContext(), "Selecciona una respuesta", Toast.LENGTH_SHORT).show();
         }else{
             int seleccionat = rg.getCheckedRadioButtonId();
             RadioButton selectRD = findViewById(seleccionat);
-            if(selectRD.getText().equals()){
+            if(selectRD.getText().equals(ps.get(random).getCorrecta())){
                 //correcta
+                Toast.makeText(getApplicationContext(), "Super xaxi", Toast.LENGTH_SHORT).show();
             }else{
                 //fallada
+                Toast.makeText(getApplicationContext(), "fallada", Toast.LENGTH_SHORT).show();
             }
+            selectRD.setChecked(false);
+            posarPregunta(ps);
         }
 
-
-        /*
-        switch (lloc){
-            case 0:{
-                rd1.setText(ps.get(random).getCorrecta());
-            }break;
-            case 1:{
-                rd2.setText(ps.get(random).getCorrecta());
-            }break;
-            case 2:{
-                rd3.setText(ps.get(random).getCorrecta());
-            }break;
-        }
-        */
     }
 
 }
