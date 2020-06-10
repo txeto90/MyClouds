@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.example.myclouds.R;
 
-public class NuvolDataActivity extends AppCompatActivity {
+public class NuvolDataActivity extends MainMenu {
 
     private TextView txtNom, txtAbrev, txtAltura, txtPrecipitacio, txtDescripcio;
     private ImageView imageView, iconoView;

@@ -7,14 +7,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior" >
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgQuiz"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_margin="10dp"
         app:srcCompat="@drawable/altocumulus_img" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="¿Que nube es?"
@@ -23,24 +23,25 @@
         android:textSize="18sp" />
 
     <RadioGroup
+        android:id="@+id/radiogroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rdOpt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="opcio1" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rdOpt2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="opcio2" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rdOpt3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="opcio3" />
@@ -48,7 +49,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnConfirmar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirmar" />
