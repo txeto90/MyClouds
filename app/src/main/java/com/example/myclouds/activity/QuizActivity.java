@@ -60,9 +60,9 @@ public class QuizActivity extends MainMenu {
 
     public void posarPregunta(){
         rg.clearCheck();
-        rd1.setBackgroundColor(Color.parseColor("#FAFAFA"));
-        rd2.setBackgroundColor(Color.parseColor("#FAFAFA"));
-        rd3.setBackgroundColor(Color.parseColor("#FAFAFA"));
+        rd1.setBackgroundColor(Color.parseColor("#E0F0FA"));
+        rd2.setBackgroundColor(Color.parseColor("#E0F0FA"));
+        rd3.setBackgroundColor(Color.parseColor("#E0F0FA"));
 
         int lloc = new Random().nextInt(2);
         random = new Random().nextInt(preguntes.size());
@@ -109,13 +109,13 @@ public class QuizActivity extends MainMenu {
                 //fallada
                 selectRD.setBackgroundColor(Color.RED);
             }
-            tempsEspera(rg, selectRD);
+            tempsEspera();
         }
 
     }
 
     Handler mHandler;
-    public void tempsEspera(RadioGroup rg, RadioButton rb){
+    public void tempsEspera(){
         mHandler = new Handler();
         mHandler.postDelayed(r, 3000);
     }
