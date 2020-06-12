@@ -1,6 +1,8 @@
 package com.example.myclouds.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +21,7 @@ public class QuizActivity extends MainMenu {
 
     private ArrayList<Pregunta> preguntes;
     RadioButton rd1, rd2, rd3;
+    private RadioGroup rg;
     int random;
 
     @Override
@@ -31,14 +34,15 @@ public class QuizActivity extends MainMenu {
         rd1 = findViewById(R.id.rdOpt1);
         rd2 = findViewById(R.id.rdOpt2);
         rd3 = findViewById(R.id.rdOpt3);
+        rg = findViewById(R.id.radiogroup);
 
         plenarArray();
-        posarPregunta(this.preguntes);
+        posarPregunta();
         Button btn = findViewById(R.id.btnConfirmar);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultat(preguntes);
+                resultat();
             }
         });
     }
@@ -56,57 +60,74 @@ public class QuizActivity extends MainMenu {
         preguntes.add(new Pregunta("stratocumulus_img", "stratocumulus"));
     }
 
-    public void posarPregunta(ArrayList<Pregunta> ps ){
+    public void posarPregunta(){
+        rg.clearCheck();
+        rd1.setBackgroundColor(Color.parseColor("#FAFAFA"));
+        rd2.setBackgroundColor(Color.parseColor("#FAFAFA"));
+        rd3.setBackgroundColor(Color.parseColor("#FAFAFA"));
+
         int lloc = new Random().nextInt(2);
-        random = new Random().nextInt(ps.size());
-        int opt1 = new Random().nextInt(ps.size());
-        int opt2 = new Random().nextInt(ps.size());
+        random = new Random().nextInt(preguntes.size());
+        int opt1 = new Random().nextInt(preguntes.size());
+        int opt2 = new Random().nextInt(preguntes.size());
 
         ImageView iv = findViewById(R.id.imgQuiz);
 
         if(random != opt1 && random != opt2 && opt1 != opt2) {
-            iv.setImageResource(getResources().getIdentifier(ps.get(random).getImatge(), "drawable", this.getPackageName()));
+            iv.setImageResource(getResources().getIdentifier(preguntes.get(random).getImatge(), "drawable", this.getPackageName()));
             switch (lloc){
                 case 0:{
-                    rd1.setText(ps.get(random).getCorrecta());
-                    rd2.setText(ps.get(opt1).getCorrecta());
-                    rd3.setText(ps.get(opt2).getCorrecta());
+                    rd1.setText(preguntes.get(random).getCorrecta());
+                    rd2.setText(preguntes.get(opt1).getCorrecta());
+                    rd3.setText(preguntes.get(opt2).getCorrecta());
                 }break;
                 case 1:{
-                    rd1.setText(ps.get(opt1).getCorrecta());
-                    rd2.setText(ps.get(random).getCorrecta());
-                    rd3.setText(ps.get(opt2).getCorrecta());
+                    rd1.setText(preguntes.get(opt1).getCorrecta());
+                    rd2.setText(preguntes.get(random).getCorrecta());
+                    rd3.setText(preguntes.get(opt2).getCorrecta());
                 }break;
                 case 2:{
-                    rd1.setText(ps.get(opt1).getCorrecta());
-                    rd2.setText(ps.get(opt2).getCorrecta());
-                    rd3.setText(ps.get(random).getCorrecta());
+                    rd1.setText(preguntes.get(opt1).getCorrecta());
+                    rd2.setText(preguntes.get(opt2).getCorrecta());
+                    rd3.setText(preguntes.get(random).getCorrecta());
                 }break;
             }
 
         }else{
-            posarPregunta(ps);
+            posarPregunta();
         }
     }
 
-    public void resultat(ArrayList<Pregunta> ps){
-        RadioGroup rg = findViewById(R.id.radiogroup);
+    public void resultat(){
         if(rg.getCheckedRadioButtonId() == -1){
             Toast.makeText(getApplicationContext(), "Selecciona una respuesta", Toast.LENGTH_SHORT).show();
         }else{
             int seleccionat = rg.getCheckedRadioButtonId();
             RadioButton selectRD = findViewById(seleccionat);
-            if(selectRD.getText().equals(ps.get(random).getCorrecta())){
+            if(selectRD.getText().equals(preguntes.get(random).getCorrecta())){
                 //correcta
-                Toast.makeText(getApplicationContext(), "Super xaxi", Toast.LENGTH_SHORT).show();
+                selectRD.setBackgroundColor(Color.GREEN);
+//                Toast.makeText(getApplicationContext(), "Super xaxi", Toast.LENGTH_SHORT).show();
             }else{
                 //fallada
-                Toast.makeText(getApplicationContext(), "fallada", Toast.LENGTH_SHORT).show();
+                selectRD.setBackgroundColor(Color.RED);
+//                Toast.makeText(getApplicationContext(), "fallada", Toast.LENGTH_SHORT).show();
             }
-            selectRD.setChecked(false);
-            posarPregunta(ps);
+            tempsEspera(rg, selectRD);
         }
 
     }
+
+    Handler mHandler;
+    public void tempsEspera(RadioGroup rg, RadioButton rb){
+        mHandler = new Handler();
+        mHandler.postDelayed(r, 3000);
+    }
+
+    private Runnable r = new Runnable() {
+        public void run() {
+            posarPregunta();
+        }
+    };
 
 }
