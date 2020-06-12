@@ -3,14 +3,12 @@ package com.example.myclouds.activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import androidx.appcompat.widget.Toolbar;
 import com.example.myclouds.R;
 import com.example.myclouds.model.Pregunta;
@@ -107,11 +105,9 @@ public class QuizActivity extends MainMenu {
             if(selectRD.getText().equals(preguntes.get(random).getCorrecta())){
                 //correcta
                 selectRD.setBackgroundColor(Color.GREEN);
-//                Toast.makeText(getApplicationContext(), "Super xaxi", Toast.LENGTH_SHORT).show();
             }else{
                 //fallada
                 selectRD.setBackgroundColor(Color.RED);
-//                Toast.makeText(getApplicationContext(), "fallada", Toast.LENGTH_SHORT).show();
             }
             tempsEspera(rg, selectRD);
         }
