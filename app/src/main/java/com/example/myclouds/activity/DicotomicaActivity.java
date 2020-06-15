@@ -19,6 +19,16 @@ public class DicotomicaActivity extends MainMenu {
         setContentView(R.layout.activity_dicotomica);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
         txtDico = findViewById(R.id.txtDico);
     }
 

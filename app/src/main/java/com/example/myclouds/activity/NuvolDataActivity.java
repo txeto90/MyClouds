@@ -1,20 +1,13 @@
 package com.example.myclouds.activity;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.myclouds.R;
 
 public class NuvolDataActivity extends MainMenu {
@@ -29,6 +22,17 @@ public class NuvolDataActivity extends MainMenu {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
+
         txtNom = findViewById(R.id.txtNom);
         txtAltura = findViewById(R.id.txtAltitud);
         txtAbrev = findViewById(R.id.txtAbrev);
@@ -37,7 +41,6 @@ public class NuvolDataActivity extends MainMenu {
         imageView = findViewById(R.id.imgNuvol);
         iconoView = findViewById(R.id.imgIcono);
         getData();
-
     }
 
     private void getData(){

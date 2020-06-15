@@ -1,5 +1,6 @@
 package com.example.myclouds.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,6 +29,17 @@ public class QuizActivity extends MainMenu {
         setContentView(R.layout.activity_quiz);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
 
         rd1 = findViewById(R.id.rdOpt1);
         rd2 = findViewById(R.id.rdOpt2);

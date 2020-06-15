@@ -24,6 +24,17 @@ public class NuvolListActivity extends MainMenu {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
+
         NuvolsDAO animalsDAO = new NuvolsDAO(this);
         //construct data source
         final ArrayList<Nuvol> nuvols = animalsDAO.getAnimals();
