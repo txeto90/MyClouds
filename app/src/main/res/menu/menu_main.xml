@@ -5,22 +5,22 @@
     <item
         android:id="@+id/inici"
         android:orderInCategory="100"
-        android:title="Inici"
+        android:title="@string/inicimenu"
         app:showAsAction="never" />
     <item
         android:id="@+id/guia"
         android:orderInCategory="100"
-        android:title="Guia"
+        android:title="@string/guiamenu"
         app:showAsAction="never" />
     <item
         android:id="@+id/identificador"
         android:orderInCategory="100"
-        android:title="Identificador"
+        android:title="@string/identificadormenu"
         app:showAsAction="never" />
     <item
         android:id="@+id/joc"
         android:orderInCategory="100"
-        android:title="Joc"
+        android:title="@string/jocmenu"
         app:showAsAction="never" />
 
 </menu>
