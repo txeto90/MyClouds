@@ -22,5 +22,9 @@
     <string name="guiamenu">Guía de nubes</string>
     <string name="identificadormenu">Identificación</string>
     <string name="jocmenu">Adivina la nube</string>
+    <string name="llistaMenu">Listado de nubes</string>
+    <string name="introMenu">Guia para la identificación de nubes.</string>
+    <string name="identificacionMenu">Identificación de nubes</string>
+    <string name="jocMenu">¿Que nube es?</string>
 
 </resources>

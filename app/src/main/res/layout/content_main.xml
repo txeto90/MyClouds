@@ -1,45 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0F0FA"
-    android:orientation="vertical"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.myclouds.activity.MainActivity"
+    tools:showIn="@layout/activity_main">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imgBackgroung"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/altocumulus_img" />
+
+    <TextView
+        android:id="@+id/txtBackground"
+        android:layout_width="334dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/introMenu"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibLlista"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toStartOf="@+id/ibDico"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBackground"
+        app:srcCompat="@drawable/menu_u" />
+
+    <ImageButton
+        android:id="@+id/ibDico"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="46dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibLlista"
+        app:layout_constraintTop_toBottomOf="@+id/txtBackground"
+        app:srcCompat="@drawable/menu_dos" />
+
+    <ImageButton
+        android:id="@+id/ibJoc"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="230dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIntroAnimalList"
+        app:srcCompat="@drawable/menu_tres" />
+
+    <TextView
+        android:id="@+id/txtIntroAnimalList"
+        android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="33dp"
+        android:text="@string/llistaMenu"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/txtIntroDicho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibLlista" />
 
-        <ImageButton
-            android:id="@+id/ibLlista"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_u" />
+    <TextView
+        android:id="@+id/txtIntroDicho"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:text="@string/identificacionMenu"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtIntroAnimalList"
+        app:layout_constraintTop_toBottomOf="@+id/ibDico" />
 
-        <ImageButton
-            android:id="@+id/ibDico"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_dos" />
+    <TextView
+        android:id="@+id/txtIntroMaps"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="33dp"
+        android:text="@string/jocMenu"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibJoc" />
 
-        <ImageButton
-            android:id="@+id/ibJoc"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu_tres" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
