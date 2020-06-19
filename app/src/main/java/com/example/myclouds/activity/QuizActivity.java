@@ -1,9 +1,9 @@
 package com.example.myclouds.activity;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -71,6 +71,9 @@ public class QuizActivity extends MainMenu {
     }
 
     public void posarPregunta(){
+        if(preguntes.size() < 3){
+            plenarArray();
+        }
         rg.clearCheck();
         rd1.setBackgroundColor(Color.parseColor("#E0F0FA"));
         rd2.setBackgroundColor(Color.parseColor("#E0F0FA"));
@@ -80,11 +83,11 @@ public class QuizActivity extends MainMenu {
         random = new Random().nextInt(preguntes.size());
         int opt1 = new Random().nextInt(preguntes.size());
         int opt2 = new Random().nextInt(preguntes.size());
-
         ImageView iv = findViewById(R.id.imgQuiz);
 
         if(random != opt1 && random != opt2 && opt1 != opt2) {
             iv.setImageResource(getResources().getIdentifier(preguntes.get(random).getImatge(), "drawable", this.getPackageName()));
+    Log.d("kk", preguntes.get(random).getImatge()+"; "+preguntes.get(random).getCorrecta());
             switch (lloc){
                 case 0:{
                     rd1.setText(preguntes.get(random).getCorrecta());
@@ -102,7 +105,6 @@ public class QuizActivity extends MainMenu {
                     rd3.setText(preguntes.get(random).getCorrecta());
                 }break;
             }
-
         }else{
             posarPregunta();
         }
@@ -116,20 +118,21 @@ public class QuizActivity extends MainMenu {
             RadioButton selectRD = findViewById(seleccionat);
             if(selectRD.getText().equals(preguntes.get(random).getCorrecta())){
                 //correcta
+                preguntes.remove(random);
                 selectRD.setBackgroundColor(Color.GREEN);
             }else{
                 //fallada
                 selectRD.setBackgroundColor(Color.RED);
+                preguntes.remove(random);
             }
             tempsEspera();
         }
-
     }
 
     Handler mHandler;
     public void tempsEspera(){
         mHandler = new Handler();
-        mHandler.postDelayed(r, 3000);
+        mHandler.postDelayed(r, 2000);
     }
 
     private Runnable r = new Runnable() {
