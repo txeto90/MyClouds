@@ -25,6 +25,6 @@
     <string name="llistaMenu">Listado de nubes</string>
     <string name="introMenu">Guia para la identificación de nubes.</string>
     <string name="identificacionMenu">Identificación de nubes</string>
-    <string name="jocMenu">¿Que nube es?</string>
+    <string name="jocMenu">Adivina la nube</string>
 
 </resources>

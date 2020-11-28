@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myclouds">
+    package="com.nubes.myclouds">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,23 +13,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.QuizActivity"
+            android:name="nubes.atlas.myclouds.activity.QuizActivity"
             android:label="@string/title_activity_quiz"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".activity.DicotomicaActivity"
+            android:name="nubes.atlas.myclouds.activity.DicotomicaActivity"
             android:label="@string/title_activity_dicotomica"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.NuvolDataActivity"
+            android:name="nubes.atlas.myclouds.activity.NuvolDataActivity"
             android:label="@string/title_activity_nuvol_data"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.NuvolListActivity"
+            android:name="nubes.atlas.myclouds.activity.NuvolListActivity"
             android:label="@string/title_activity_nuvol_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name="nubes.atlas.myclouds.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

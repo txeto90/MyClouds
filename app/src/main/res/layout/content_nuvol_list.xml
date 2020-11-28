@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="activity.NuvolListActivity"
+    tools:context="nubes.atlas.myclouds.activity.NuvolListActivity"
     android:background="#E0F0FA"
     tools:showIn="@layout/activity_nuvol_list">
 
